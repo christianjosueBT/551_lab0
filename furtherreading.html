@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conquering Responsive Layouts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+    <header>
+      <section class="top-nav">
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
+          <li><a class="nav__link" href="./index.html">Home</a></li>
+          <li><a class="nav__link" href="./flexbox.html">Flexbox</a></li>
+          <li><a class="nav__link" href="./mediaqueries.html">Media Queries</a></li>
+          <li><a class="nav__link" href="./furtherreading.html">Further Reading</a></li>
+        </ul>
+      </section>
+    </header>
+
+    <section class="hero">
+      <div class="container row">
+        <div class="hero__text">
+          <h1>Further Reading</h1>
+          <p>Here I will share a list of great resources I've found related to responsive website designs!</p>
+        </div>
+      </div>
+    </section>
+
+    <main class="main container row">
+      <section class="primary-content">
+        <h2 class="section-title"><strong>Responsive Website Design Resources</strong></h2>
+        <p>In this website, we barely scratched the surface of what can be done to make websites more responsive and
+          accessible! There are a ton of things that we didn't cover, however if this subject has piqued your interest,
+          I've compiled a list of resources for learning more about responsive and accessible website design. In the
+          table below you will find the best resources I have come across regarding responsive website design!</p>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Link</th>
+              <th scope="col">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="https://courses.kevinpowell.co/conquering-responsive-layouts">Kevin Powell's Conquering
+                  Responsive Layouts 21-day Challenge</a></td>
+              <td>In this 21 day challenge, Kevin Powell gives you an overview of how to approach responsive website
+                design in short, digestible, little bits. It purposefully takes its time building up small fundamental
+                concepts, so that when more difficult ones are introduced you don't find yourself scratching your head.
+                It is by no means meant to be a comprehensive resource, however it is a great place to start for
+                absoulte beginners as you have to do quite a few challenges, and you get access to a great discord
+                channel where you can ask questions to people taking the course at the same time as you. Also, it is
+                completely free so that's great! </td>
+            </tr>
+            <tr>
+              <td><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout">MDN's CSS Layout
+                  Cookbook</a></td>
+              <td>MDN is one of the best free resources when it comes to learning anything related to website design,
+                and responsive web design is no different. This is the most extensive documentation repository and
+                learning resource for open web standards. It is maintained by Mozilla and Google employees and
+                volunteers, and in it you can find a plethora of guides, exhaustive documentation of almost anything
+                web related, up to date information on things current, deprecated, and experimental web technologies,
+                as well as tons of examples and explanations geared towards beginners. By far and away one of the best
+                resrouces for learnign about responsive web design and web development overall!</td>
+            </tr>
+            <tr>
+              <td><a href="https://www.freecodecamp.org/learn/responsive-web-design/">freeCodeCamp's Responsive Web
+                  Design Certificate</a></td>
+              <td>Free Code Camp is a non-profit organization whose sole purpose is to make we development accessible to
+                anyone. They have thousands of hours worth of content, and have helped thousands of people land
+                developer jobs. They cover pretty much any area imaginable relating to web development and their
+                tutorials and certificates are geared towards being as easy to understand and pain free as possible. It
+                is a big time commitment to go through one of their certificates, as they take an estimated 300 hours to
+                complete, however I have found their quality to be outstanding so it is well worth it if you have the
+                time!</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <!-- <pre><code class="size-100 media">
+@media (min-width: 600px) {
+  .media {
+    background-color: #ffddf4;
+  }
+}
+        </code></pre> -->
+
+      </section>
+    </main>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </body>
+
+</html>

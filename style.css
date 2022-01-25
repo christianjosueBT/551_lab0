@@ -1,0 +1,385 @@
+@font-face {
+  font-family: SFMonoRegular;
+  src: url(./sf-mono-cufonfonts/SFMonoRegular.otf);
+}
+@font-face {
+  font-family: SFMonoHeavy;
+  src: url(./sf-mono-cufonfonts/SFMonoHeavy.otf);
+}
+@font-face {
+  font-family: SFMonoLight;
+  src: url(./sf-mono-cufonfonts/SFMonoLight.otf);
+}
+@font-face {
+  font-family: SFMonoMedium;
+  src: url(./sf-mono-cufonfonts/SFMonoMedium.otf);
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  margin-bottom: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+}
+
+html {
+  margin: 0;
+}
+
+header {
+  background: #136c72;
+  padding: 0.5em 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-top: 0;
+}
+
+h6 {
+  margin: 0.5rem 0;
+}
+
+code {
+  background: #ffeff0;
+  word-wrap: break-word;
+  -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+  padding: 0.1rem 0.3rem 0.2rem;
+  border-radius: 0.2rem;
+}
+
+pre code,
+pre {
+  border-radius: 0.5rem;
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: inherit;
+}
+
+.margin0 {
+  margin: 0 !important;
+}
+
+.gap0 {
+  gap: 0 !important;
+}
+
+.purple {
+  background-color: #87629a;
+  padding: 1rem;
+  color: #f5d67b;
+  border-radius: 0.5rem;
+}
+
+.size-100 {
+  width: 100%;
+}
+
+.size-max-content {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+
+.section-title,
+.section-subtitle {
+  color: #87629a;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.col {
+  background-color: #136c72;
+  border-radius: 0.2rem;
+  border: 1px #fff solid;
+}
+
+.btn {
+  color: #fff;
+  background-color: #87629a;
+}
+
+.table a {
+  color: #87629a;
+}
+.table a:hover {
+  opacity: 0.75;
+}
+
+.nav__link,
+li a {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  margin-left: 2rem;
+  font-weight: 700;
+}
+
+.nav__link:hover {
+  opacity: 0.75;
+}
+
+.hero {
+  padding: 100px 0;
+  background-color: #23424a;
+  color: #fff;
+}
+.hero .hero__text {
+  flex: 2;
+}
+.hero .hero__img {
+  flex: 1;
+  align-self: flex-start;
+}
+.hero .hero p {
+  margin-bottom: 3em;
+}
+
+.main {
+  margin-top: 3em;
+}
+.main .primary-content {
+  flex: 2;
+}
+.main .sidebar {
+  flex: 1;
+  padding: 1em;
+  text-align: center;
+  color: #fff;
+  background-color: #136c72;
+  border-radius: 1rem;
+}
+
+.flexbox-container3, .flexbox-container2, .flexbox-container {
+  display: flex;
+  background-color: #87629a;
+  padding: 0.5rem;
+  font-family: SFMonoRegular;
+  color: #f5d67b;
+  border-radius: 0.5rem;
+}
+
+.flexbox-container2 {
+  width: 100%;
+}
+
+.flexbox-container3 {
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.flexbox-child3, .flexbox-child2, .flexbox-child {
+  background-color: #136c72;
+  display: grid;
+  place-content: center;
+  border-radius: 0.2rem;
+  border: 1px #fff solid;
+}
+
+.flexbox-child2 {
+  flex: 1 1 33%;
+}
+
+.flexbox-child3 {
+  flex: 1 1 auto;
+}
+
+.block-container2, .block-container {
+  background-color: #87629a;
+  padding: 0.5rem;
+  font-family: SFMonoRegular;
+  color: #f5d67b;
+  border-radius: 0.5rem;
+}
+
+.block-container2 {
+  width: 100%;
+}
+
+.block-child2, .block-child {
+  background-color: #136c72;
+  display: grid;
+  place-content: center;
+  border-radius: 0.2rem;
+  border: 1px #fff solid;
+}
+
+.block-child2 {
+  width: 32%;
+  display: inline-block;
+}
+
+.examples {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1rem;
+}
+.examples .example-title {
+  color: #87629a;
+}
+
+@media (min-width: 600px) {
+  .media {
+    background-color: #ffeff0;
+  }
+}
+/* Hamburger menu styles taken from https://codepen.io/alvarotrigo/pen/MWEJEWG under the MIT license */
+#menu-input {
+  display: none;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #00baf0; */
+  /* background: linear-gradient(to left, #f46b45, #eea849); */
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: #fff;
+  height: 50px;
+  padding: 1em;
+}
+
+.top-nav h2 {
+  vertical-align: center;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu > li {
+  margin: 0 1rem;
+}
+
+.menu-button-container {
+  display: none;
+  height: 100%;
+  width: 30px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu-button,
+.menu-button::before,
+.menu-button::after {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  height: 4px;
+  width: 30px;
+  transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  border-radius: 2px;
+}
+
+.menu-button::before {
+  content: "";
+  margin-top: -8px;
+}
+
+.menu-button::after {
+  content: "";
+  margin-top: 8px;
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::before {
+  margin-top: 0px;
+  transform: rotate(405deg);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button {
+  background: rgba(255, 255, 255, 0);
+}
+
+#menu-toggle:checked + .menu-button-container .menu-button::after {
+  margin-top: 0px;
+  transform: rotate(-405deg);
+}
+
+@media (max-width: 810px) {
+  .menu-button-container {
+    display: flex;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    left: 0;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menu-toggle ~ .menu li {
+    height: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  #menu-toggle:checked ~ .menu li {
+    display: flex;
+    border: 1px solid #333;
+    height: 2.5em;
+    padding: 0.5em;
+    transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .menu > li {
+    display: none;
+    justify-content: center;
+    margin: 0;
+    padding: 0.5em 0;
+    width: 100%;
+    color: white;
+    background-color: #222;
+  }
+
+  .menu > li:not(:last-child) {
+    border-bottom: 1px solid #444;
+  }
+}/*# sourceMappingURL=style.css.map */

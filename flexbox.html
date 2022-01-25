@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conquering Responsive Layouts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+      <section class="top-nav">
+        <input id="menu-toggle" type="checkbox" />
+        <label class='menu-button-container' for="menu-toggle">
+          <div class='menu-button'></div>
+        </label>
+        <ul class="menu">
+          <li><a class="nav__link" href="./index.html">Home</a></li>
+          <li><a class="nav__link" href="./flexbox.html">Flexbox</a></li>
+          <li><a class="nav__link" href="./mediaqueries.html">Media Queries</a></li>
+          <li><a class="nav__link" href="./furtherreading.html">Further Reading</a></li>
+        </ul>
+      </section>
+    </header>
+
+    <section class="hero">
+      <div class="container row">
+        <div class="hero__text">
+          <h1>Flexbox</h1>
+          <pre><code class="size-max-content">
+.flex {
+  display: flex;
+}
+          </code></pre>
+          <p>The main idea behind flexbox is flexibility. Flexbox allows us to define flex containers with children
+            that can be dynamically sized to fit best within their container. In this page we will introduce you to the
+            basic concepts of flexbox and how to get strated with using it!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <main class="main container row">
+      <section class="primary-content">
+        <h2 class="section-title"><strong>Flexbox basics</strong></h2>
+        <p>All we need to start using flexbox is to give a parent element the property of <code>display: flex</code> and
+          all its children will become flex items! All items can now be dynamically sized based on the size of their
+          container. By default, the flexbox container will align its children elements in a row orientation as can be
+          seen below.
+        </p>
+        <h6 class="example-title"><em>display:flex</em></h6>
+        <div class="examples">
+          <pre><code>
+.flexbox-container {
+  display: flex;
+}
+          </code></pre>
+          <div class="flexbox-container">
+            <div class="flexbox-child">flexbox-child</div>
+            <div class="flexbox-child">flexbox-child</div>
+            <div class="flexbox-child">flexbox-child</div>
+          </div>
+        </div>
+        <p>By comparison, if we were to use default value of <code>display: block</code> the parent container would
+          align its children vertically. This effect can be seen below. Note that the shown <code>display: block</code>
+          below is not necessary as this is the default behaviour of div elements, I just added it for demonstration
+          purposes.
+        </p>
+        <h6 class="example-title"><em>display:block</em></h6>
+        <div class="examples">
+          <pre><code>
+.block-container {
+  display: block;
+}
+          </code></pre>
+          <div class="block-container">
+            <div class="block-child">block-child</div>
+            <div class="block-child">block-child</div>
+            <div class="block-child">block-child</div>
+          </div>
+        </div>
+        <p>However, the power of flexbox does not become apparent until we start trying to give elements sizes. Let's
+          say we wanted to create a row that takes up a 100% of the space available to it, with 3 elements each
+          taking up 1/3 of the container. To achieve this, we could do something like the following:
+        </p>
+        <h6 class="example-title"><em>display:block</em></h6>
+        <div class="examples">
+          <pre><code>
+.block-container {
+  display: block;
+  width: 100%;
+}
+
+.block-child {
+  width: 32%;
+}
+          </code></pre>
+          <div class="block-container2">
+            <div class="block-child2">block-child</div>
+            <div class="block-child2">block-child</div>
+            <div class="block-child2">block-child</div>
+          </div>
+        </div>
+        <p>We use a width of 32% to account for the paddding in the parent element and the borders on the child
+          elements. This works ok at larger screen sizes, but at smaller sizes this breaks down because the remaining 4%
+          of space available is not sufficient to account for the padding and border, so one of the elements must wrap
+          onto a new row, leaving an awful lot of unused space left. You can see this if you resize the browser window
+          on which you are viewing this website or by flipping your phone to see the 2 different cases.
+        </p>
+        <p>Using flexbox, we could achieve this as follows:</p>
+        <h6 class="example-title"><em>display:flex</em></h6>
+        <div class="examples">
+          <pre><code>
+.flex-container {
+  display: flex;
+  width: 100%;
+}
+
+.flex-child {
+  flex: 1 1 33%;
+}
+          </code></pre>
+          <div class="flexbox-container2">
+            <div class="flexbox-child2">flexbox-child</div>
+            <div class="flexbox-child2">flexbox-child</div>
+            <div class="flexbox-child2">flexbox-child</div>
+          </div>
+        </div>
+        <p>The new property <code>flex: 1 1 auto</code> is a shorthand property that sets 3 different properties at
+          once. The first number sets the value of the <code>flex-grow</code> property, this tells a flex child if it is
+          allowed to grow past its normal size and by how much. The second number sets the value of the
+          <code>flow-shrink</code> property, it works similarly to <code>flex-grow</code> but for shrinking. And finally
+          the third value sets the property of <code>flex-basis</code>, which tells the item what its ideal
+          size should be. Here, we are telling our items they are allowed to grow and shrink away from their ideal size
+          if it is necessary, however they will always try to be their ideal size. Because in our case this size is a
+          percentage, our elements will always remain at that ideal size.
+        </p>
+        <p>This already works a lot better than our
+          previous example because flexbox takes into account any border and padding sizes that have been taken up
+          already, and distributes the remaining space to its childrend equally. However, we still run into some issues
+          when we reduce the size of the browser window to where the child elements can shrink no further without
+          overflowing. You can see this if you shrink the browser window yourself. Fortunately, fixing this is really
+          easy with flexbox! Here is how to do it:</p>
+        <h6 class="example-title"><em>display:flex</em></h6>
+        <div class="examples">
+          <pre><code>
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+        
+.flex-child {
+  flex: 1 1 auto;
+}
+          </code></pre>
+          <div class="flexbox-container3">
+            <div class="flexbox-child3">flexbox-child</div>
+            <div class="flexbox-child3">flexbox-child</div>
+            <div class="flexbox-child3">flexbox-child</div>
+          </div>
+        </div>
+        <p>The above property <code>flex-wrap</code> is a handy little property that allows us to tell our flex
+          containers to allow or prevent its child elements from wrapping onto a new row when they are about to
+          overflow. Setting it to wrap tells the container to allow its children to wrap instead of overflowing. For it
+          to work properly though, we must set <code>flex-basis</code> to a non-numerical value, as flex elements tend
+          to prioritize that value over wrapping. We can stilll achieve the desired effect of equally distributing the
+          available space amoings the child elements because they all have a property of <code>flex-grow: 1</code> which
+          means they will all grow in size equally. Resize the window of your browser to see this effect in practice!
+        </p>
+        <p>Last, we will achieve the same but using bootstrap's grid system!</p>
+
+        <div class="container margin0">
+          <div class="row purple gap0">
+            <div class="col">bootstrap grid column</div>
+            <div class="col">bootstrap grid column</div>
+            <div class="col">bootstrap grid column</div>
+          </div>
+        </div>
+
+        <p>Next, we will look at how we can use media queries to make our sites even more responsive! Click the button
+          below to continue on</p>
+        <button type="button" class="btn"><a href="mediaqueries.html">Media queries!</a></button>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </body>
+
+</html>
